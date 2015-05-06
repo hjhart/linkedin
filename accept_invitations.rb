@@ -15,6 +15,11 @@ element.submit
 
 connections_url = 'https://www.linkedin.com/people/pymk/hub?ref=global-nav&trk=nav_utilities_invites_header'
 
+if driver.title.match /Sign-In Verification/
+  puts "Sign in verification necessary. Enter proper response inside of driver."
+  binding.pry
+end
+
 # Handle the captcha dialgoue if it pops up.
 if driver.title.match /Security Verification/
   puts "CAPTCHA robot stuff... enter in proper response inside of driver."
