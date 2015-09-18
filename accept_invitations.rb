@@ -7,9 +7,9 @@ driver = Selenium::WebDriver.for :firefox
 driver.navigate.to "http://linkedin.com"
 
 # log in!
-element = driver.find_element(:id, 'session_key-login')
+element = driver.find_element(:id, 'login-email')
 element.send_keys username
-element = driver.find_element(:id, 'session_password-login')
+element = driver.find_element(:id, 'login-password')
 element.send_keys password
 element.submit
 
@@ -31,8 +31,8 @@ end
   puts "Refreshing and clicking 'See more' six times...  "
 
   driver.navigate.to connections_url
-  invitations_remaining = driver.find_element(:css => '.pending-total.hidden')['innerHTML']
-  puts "Invitations remaining: #{invitations_remaining}"
+  # invitations_remaining = driver.find_element(:css => '.pending-total.hidden')['innerHTML']
+  # puts "Invitations remaining: #{invitations_remaining}"
   
   begin
     10.times do
